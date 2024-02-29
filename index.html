@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+     body{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color:#fff;
+    }
+    h1{
+        text-align: center;
+    }
+    #clock{
+        margin-top:40px;
+        height:300px;
+        width:300px;
+        background-color: rgba(225, 220, 220, 0.954);
+        border-radius: 50%;
+        box-shadow: inset -4px 4px 2px rgba(7, 184, 178, 0.4);;
+        border:10px solid rgba(254, 253, 253);
+        color: #090909;
+        font-weight: 500;
+        font-size: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 4px 4px 4px rgba(7, 184, 178, 0.4);
+        animation: colorchanger 7s  linear infinite;
+    }
+    @keyframes colorchanger{
+        0%{
+            border:10px solid rgba(243, 21, 21, 0.954);
+            text-shadow: 4px 4px 4px rgba(243, 21, 21, 0.954);
+        }
+        20%{
+            border:12px solid rgba(251, 235, 9, 0.954);
+            text-shadow: 4px 4px 4px rgba(251, 235, 9, 0.954);
+        }
+        40%{
+            border:14px solid rgba(73, 187, 7, 0.954);
+            text-shadow: 4px 4px 4px rgba(73, 187, 7, 0.954);
+        }
+        60%{
+            border:16px solid rgba(8, 28, 244, 0.954);
+            text-shadow: 4px 4px 4px rgba(8, 28, 244, 0.954);
+        }
+        80%{
+            border:14px solid rgba(239, 6, 243, 0.954);
+            text-shadow: 4px 4px 4px rgba(239, 6, 243, 0.954);
+        }
+        100%{
+            border:12px solid rgba(234, 18, 29, 0.954);
+            text-shadow: 4px 4px 4px rgba(234, 18, 29, 0.954);
+        }
+    }
+
+
+   
+    
+</style>
+<body><div>
+   <h1>Digital Clock</h1> 
+   <div id="clock"></div>
+   
+</div>
+</body>
+<script>
+    const clock = document.getElementById("clock");
+
+    setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    },1000)
+</script>
+</html>
